@@ -1,0 +1,255 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap");
+
+@import "tailwindcss";
+
+:root {
+  /* Background */
+  --color-background: #fff8ee;
+  --color-surface: #ffffff;
+  --color-surface-soft: #fffdf8;
+
+  /* Text */
+  --color-text: #171717;
+  --color-text-muted: #66615a;
+  --color-text-soft: #8b847b;
+
+  /* Brand colors */
+  --color-coral: #ff5a5f;
+  --color-blue: #3b82f6;
+  --color-yellow: #ffc857;
+  --color-mint: #42d6a4;
+  --color-purple: #7c5cfc;
+  --color-orange: #ff8a3d;
+
+  /* Borders */
+  --color-border: #171717;
+  --color-border-soft: #ded8ce;
+
+  /* Shadows */
+  --shadow-card: 5px 5px 0 #171717;
+  --shadow-card-small: 3px 3px 0 #171717;
+
+  /* Radius */
+  --radius-card: 18px;
+  --radius-button: 12px;
+
+  /* Layout */
+  --max-width: 1400px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+
+  background: var(--color-background);
+  color: var(--color-text);
+
+  font-family: "DM Sans", sans-serif;
+
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 3px solid var(--color-blue);
+  outline-offset: 3px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+::selection {
+  background: var(--color-yellow);
+  color: var(--color-text);
+}
+
+/* --------------------------------------------------
+   Typography
+-------------------------------------------------- */
+
+.display-font {
+  font-family: "Space Grotesk", sans-serif;
+  letter-spacing: -0.04em;
+}
+
+.display-title {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(3rem, 8vw, 8rem);
+  line-height: 0.9;
+  letter-spacing: -0.06em;
+  font-weight: 700;
+}
+
+.section-title {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(2rem, 5vw, 4.5rem);
+  line-height: 0.95;
+  letter-spacing: -0.05em;
+  font-weight: 700;
+}
+
+/* --------------------------------------------------
+   Layout
+-------------------------------------------------- */
+
+.page-shell {
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.content-width {
+  width: min(
+    calc(100% - 40px),
+    var(--max-width)
+  );
+
+  margin: 0 auto;
+}
+
+/* --------------------------------------------------
+   Scrapbook details
+-------------------------------------------------- */
+
+.paper-card {
+  background: var(--color-surface);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+}
+
+.paper-card-small {
+  background: var(--color-surface);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card-small);
+}
+
+.dashed-divider {
+  border-top: 2px dashed var(--color-border);
+}
+
+.stamp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 6px 12px;
+
+  border: 2px solid var(--color-border);
+  border-radius: 999px;
+
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* --------------------------------------------------
+   Paper texture
+-------------------------------------------------- */
+
+.paper-texture {
+  background-color: var(--color-background);
+
+  background-image:
+    radial-gradient(
+      rgba(23, 23, 23, 0.035) 0.7px,
+      transparent 0.7px
+    );
+
+  background-size: 7px 7px;
+}
+
+/* --------------------------------------------------
+   Utility colors
+-------------------------------------------------- */
+
+.bg-coral {
+  background-color: var(--color-coral);
+}
+
+.bg-blue {
+  background-color: var(--color-blue);
+}
+
+.bg-yellow {
+  background-color: var(--color-yellow);
+}
+
+.bg-mint {
+  background-color: var(--color-mint);
+}
+
+.bg-purple {
+  background-color: var(--color-purple);
+}
+
+.bg-orange {
+  background-color: var(--color-orange);
+}
+
+/* --------------------------------------------------
+   Reduced motion
+-------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* --------------------------------------------------
+   Mobile
+-------------------------------------------------- */
+
+@media (max-width: 640px) {
+  .content-width {
+    width: min(
+      calc(100% - 24px),
+      var(--max-width)
+    );
+  }
+
+  .paper-card {
+    box-shadow: 3px 3px 0 var(--color-border);
+  }
+}
