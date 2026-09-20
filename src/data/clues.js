@@ -1,171 +1,258 @@
 const clues = [
-  {
-    id: 1,
-    caseId: 1,
-    period: "MAY 2023",
-    title: "A Quiet Beginning",
-    value: "382",
-    unit: "transactions",
-    category: "ACTIVITY",
-    color: "bg-blue",
-    rotate: "-2deg",
 
-    observation:
-      "May recorded 382 transactions.",
+    // =====================================================
+    // CASE 01
+    // =====================================================
 
-    meaning:
-      "This gives us a baseline for comparing what happens next.",
+    {
+        id: 1,
+        caseId: 1,
+        period: "MAY 2023",
+        title: "A Quiet Beginning",
+        value: "382",
+        unit: "transactions",
+        category: "ACTIVITY",
+        color: "bg-blue",
+        rotate: "-2deg",
+        observation: "May recorded 382 transactions.",
+        meaning: "This gives us a baseline for comparing what happens next.",
+        doesNotProve: "It does not tell us why activity looked this way.",
+        archivist: "Start here. Before we can spot a change, we need to know what normal looked like.",
+    },
 
-    doesNotProve:
-      "It does not tell us why activity looked this way.",
+    {
+        id: 2,
+        caseId: 1,
+        period: "JUNE 2023",
+        title: "Something Spiked",
+        value: "575",
+        unit: "transactions",
+        category: "ACTIVITY",
+        color: "bg-coral",
+        rotate: "2deg",
+        observation: "June recorded 575 transactions compared with 382 in May.",
+        meaning: "Activity increased substantially from the previous month.",
+        doesNotProve: "An increase in activity does not tell us what caused it.",
+        archivist: "There. That's our first movement. June suddenly looks different.",
+    },
 
-    archivist:
-      "Start here. Before we can spot a change, we need to know what normal looked like."
-  },
+    {
+        id: 3,
+        caseId: 1,
+        period: "JUNE 2023",
+        title: "The Big Number",
+        value: "2.85M",
+        unit: "total amount",
+        category: "SPENDING",
+        color: "bg-yellow",
+        rotate: "-3deg",
+        observation: "The total recorded amount for June was approximately 2.85 million.",
+        meaning: "June was not only more active. The spending signal increased alongside the activity signal.",
+        doesNotProve: "It does not prove what the money was spent on or why spending increased.",
+        archivist: "Wait. The activity jumped... and so did the spending.",
+    },
 
-  {
-    id: 2,
-    caseId: 1,
-    period: "JUNE 2023",
-    title: "Something Spiked",
-    value: "575",
-    unit: "transactions",
-    category: "ACTIVITY",
-    color: "bg-coral",
-    rotate: "2deg",
+    {
+        id: 4,
+        caseId: 1,
+        period: "JUNE 2023",
+        title: "Many Entities",
+        value: "72",
+        unit: "active entities",
+        category: "NETWORK",
+        color: "bg-purple",
+        rotate: "3deg",
+        observation: "June involved 72 active entities.",
+        meaning: "The June increase involved activity across many entities.",
+        doesNotProve: "It does not prove that all 72 entities were related to the same event.",
+        archivist: "And it's not just one corner of the trail. A lot of entities were active in June.",
+    },
 
-    observation:
-      "June recorded 575 transactions compared with 382 in May.",
+    {
+        id: 5,
+        caseId: 1,
+        period: "JULY 2023",
+        title: "The Drop",
+        value: "418",
+        unit: "transactions",
+        category: "ACTIVITY",
+        color: "bg-mint",
+        rotate: "-2deg",
+        observation: "July recorded 418 transactions after June's 575.",
+        meaning: "The June activity surge did not continue into July.",
+        doesNotProve: "It does not tell us why activity decreased.",
+        archivist: "Interesting. Whatever happened in June didn't simply continue.",
+    },
 
-    meaning:
-      "Activity increased substantially from the previous month.",
+    {
+        id: 6,
+        caseId: 1,
+        period: "AUGUST 2023",
+        title: "Travel Appears",
+        value: "35.1%",
+        unit: "travel share",
+        category: "PLACES",
+        color: "bg-orange",
+        rotate: "2deg",
+        observation: "Travel represented 35.1% of recorded activity in August.",
+        meaning: "The composition of activity shifted toward travel.",
+        doesNotProve: "It does not prove that the person was on vacation.",
+        archivist: "Now we're seeing a different kind of change.",
+    },
 
-    doesNotProve:
-      "An increase in activity does not tell us what caused it.",
+    {
+        id: 7,
+        caseId: 1,
+        period: "AUGUST 2023",
+        title: "Shopping Trail",
+        value: "17.0%",
+        unit: "online shopping share",
+        category: "PURCHASES",
+        color: "bg-blue",
+        rotate: "-3deg",
+        observation: "Online shopping represented 17.0% of recorded activity in August.",
+        meaning: "August contained a noticeable online-shopping component.",
+        doesNotProve: "It does not prove what was purchased or why.",
+        archivist: "Travel and shopping. The trail changed composition after the June spike.",
+    },
 
-    archivist:
-      "There. That's our first movement. June suddenly looks different."
-  },
 
-  {
-    id: 3,
-    caseId: 1,
-    period: "JUNE 2023",
-    title: "The Big Number",
-    value: "2.85M",
-    unit: "total amount",
-    category: "SPENDING",
-    color: "bg-yellow",
-    rotate: "-3deg",
+    // =====================================================
+    // CASE 02 — THE IMPOSSIBLE DAY
+    // =====================================================
 
-    observation:
-      "The total recorded amount for June was approximately 2.85 million.",
+    {
+        id: 201,
+        caseId: 2,
+        period: "NORMAL DAY",
+        title: "The Usual Rhythm",
+        value: "≈ 20",
+        unit: "transactions",
+        category: "BASELINE",
+        color: "bg-blue",
+        rotate: "-2deg",
+        observation: "A typical day in the surrounding period recorded far fewer transactions than March 9.",
+        meaning: "This gives us a reference point for identifying an unusual day.",
+        doesNotProve: "It does not tell us what caused an unusual day.",
+        archivist: "Before calling a day impossible, we need to know what normal looks like.",
+    },
 
-    meaning:
-      "June was not only more active. The spending signal increased alongside the activity signal.",
+    {
+        id: 202,
+        caseId: 2,
+        period: "MARCH 9, 2024",
+        title: "The Impossible Day",
+        value: "61",
+        unit: "transactions",
+        category: "ACTIVITY",
+        color: "bg-coral",
+        rotate: "2deg",
+        observation: "March 9 recorded 61 transactions.",
+        meaning: "The day stands out sharply against the surrounding baseline.",
+        doesNotProve: "It does not prove why the activity was unusually high.",
+        archivist: "There it is. One day suddenly towers over the normal rhythm.",
+    },
 
-    doesNotProve:
-      "It does not prove what the money was spent on or why spending increased.",
+    {
+        id: 203,
+        caseId: 2,
+        period: "MARCH 9, 2024",
+        title: "The Spending Spike",
+        value: "200,268",
+        unit: "total amount",
+        category: "SPENDING",
+        color: "bg-yellow",
+        rotate: "-3deg",
+        observation: "March 9 recorded a total amount of 200,268.",
+        meaning: "The unusual activity was accompanied by an unusually large recorded amount.",
+        doesNotProve: "It does not prove what the money was spent on.",
+        archivist: "And the money signal agrees with the activity signal.",
+    },
 
-    archivist:
-      "Wait. The activity jumped... and so did the spending. That's two signals moving together."
-  },
+    {
+        id: 204,
+        caseId: 2,
+        period: "MARCH 9, 2024",
+        title: "Seven Entities",
+        value: "7",
+        unit: "active entities",
+        category: "NETWORK",
+        color: "bg-purple",
+        rotate: "2deg",
+        observation: "Seven entities were active on March 9.",
+        meaning: "The unusual day involved activity across multiple entities.",
+        doesNotProve: "It does not prove those entities were part of one event.",
+        archivist: "Seven entities. So this wasn't simply one recorded transaction.",
+    },
 
-  {
-    id: 4,
-    caseId: 1,
-    period: "JUNE 2023",
-    title: "Many Entities",
-    value: "72",
-    unit: "active entities",
-    category: "NETWORK",
-    color: "bg-purple",
-    rotate: "3deg",
 
-    observation:
-      "June involved 72 active entities.",
+    // =====================================================
+    // CASE 03 — THE REPEATING RITUAL
+    // =====================================================
 
-    meaning:
-      "The June increase involved activity across many entities rather than a single recorded entity.",
+    {
+        id: 301,
+        caseId: 3,
+        period: "SEQUENCE 01",
+        title: "Shopping × 3",
+        value: "1,689",
+        unit: "sequence count",
+        category: "ONLINE SHOPPING",
+        color: "bg-coral",
+        rotate: "-2deg",
+        observation: "Online shopping activity repeatedly appeared in three consecutive positions.",
+        meaning: "The same category appears repeatedly instead of being randomly distributed.",
+        doesNotProve: "It does not prove why the shopping activity repeated.",
+        archivist: "Once could be random. Three times in sequence is worth investigating.",
+    },
 
-    doesNotProve:
-      "It does not prove that all 72 entities were related to the same event.",
+    {
+        id: 302,
+        caseId: 3,
+        period: "SEQUENCE 02",
+        title: "Travel × 3",
+        value: "1,612",
+        unit: "sequence count",
+        category: "TRAVEL",
+        color: "bg-blue",
+        rotate: "2deg",
+        observation: "Travel activity repeatedly appeared in three consecutive positions.",
+        meaning: "Travel also forms a repeated sequence.",
+        doesNotProve: "It does not prove the person was travelling continuously.",
+        archivist: "Another repeated sequence. Now we have a pattern worth comparing.",
+    },
 
-    archivist:
-      "And it's not just one corner of the trail. A lot of entities were active in June."
-  },
+    {
+        id: 303,
+        caseId: 3,
+        period: "SEQUENCE 03",
+        title: "Entertainment × 3",
+        value: "1,550",
+        unit: "sequence count",
+        category: "ENTERTAINMENT",
+        color: "bg-yellow",
+        rotate: "-3deg",
+        observation: "Entertainment activity repeatedly appeared in three consecutive positions.",
+        meaning: "Repeated clustering also appears in entertainment.",
+        doesNotProve: "It does not prove a specific entertainment habit.",
+        archivist: "Three categories. Same strange rhythm.",
+    },
 
-  {
-    id: 5,
-    caseId: 1,
-    period: "JULY 2023",
-    title: "The Drop",
-    value: "418",
-    unit: "transactions",
-    category: "ACTIVITY",
-    color: "bg-mint",
-    rotate: "-2deg",
-
-    observation:
-      "July recorded 418 transactions after June's 575.",
-
-    meaning:
-      "The June activity surge did not continue into July.",
-
-    doesNotProve:
-      "It does not tell us why activity decreased.",
-
-    archivist:
-      "Interesting. Whatever happened in June didn't simply continue."
-  },
-
-  {
-    id: 6,
-    caseId: 1,
-    period: "AUGUST 2023",
-    title: "Travel Appears",
-    value: "35.1%",
-    unit: "travel share",
-    category: "PLACES",
-    color: "bg-orange",
-    rotate: "2deg",
-
-    observation:
-      "Travel represented 35.1% of the recorded activity in August.",
-
-    meaning:
-      "The composition of activity shifted toward travel.",
-
-    doesNotProve:
-      "It does not prove that the person was on vacation.",
-
-    archivist:
-      "Now we're seeing a different kind of change. The trail itself is taking on a different shape."
-  },
-
-  {
-    id: 7,
-    caseId: 1,
-    period: "AUGUST 2023",
-    title: "Shopping Trail",
-    value: "17.0%",
-    unit: "online shopping share",
-    category: "PURCHASES",
-    color: "bg-blue",
-    rotate: "-3deg",
-
-    observation:
-      "Online shopping represented 17.0% of the recorded activity in August.",
-
-    meaning:
-      "August contained a noticeable online-shopping component alongside the travel activity.",
-
-    doesNotProve:
-      "It does not prove what was purchased or why.",
-
-    archivist:
-      "Travel and shopping. The trail changed composition after the June spike."
-  },
+    {
+        id: 304,
+        caseId: 3,
+        period: "SEQUENCE 04",
+        title: "Fitness / Medical × 3",
+        value: "1,329",
+        unit: "sequence count",
+        category: "FITNESS / MEDICAL",
+        color: "bg-mint",
+        rotate: "3deg",
+        observation: "Fitness or medical activity repeatedly appeared in three consecutive positions.",
+        meaning: "The same clustering pattern appears in another category.",
+        doesNotProve: "It does not prove a specific health-related event.",
+        archivist: "Different category. Same structure. That's the interesting part.",
+    },
 ];
 
 export default clues;

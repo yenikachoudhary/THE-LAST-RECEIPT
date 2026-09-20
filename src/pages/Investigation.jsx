@@ -17,7 +17,7 @@ function Investigation({ caseData, onBack }) {
     const [showReveal, setShowReveal] = useState(false);
 
     const caseClues = clues.filter(
-        (clue) => clue.caseId === 1
+        (clue) => clue.caseId === caseData?.id
     );
 
     const examineClue = (clue) => {
@@ -50,7 +50,7 @@ function Investigation({ caseData, onBack }) {
                 </button>
 
                 <span className="stamp bg-[var(--color-yellow)]">
-                    CASE 01 / INVESTIGATION
+                    CASE {String(caseData?.id).padStart(2, "0")}/ INVESTIGATION
                 </span>
 
             </header>
